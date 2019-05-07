@@ -1,7 +1,3 @@
-"""
-Standardized logging configuration for EIQ projects.
-"""
-
 import os
 import logging
 import sys
@@ -9,15 +5,8 @@ import traceback
 
 import structlog
 
+from .constants import DEFAULT_FORMAT, DEFAULT_LEVELS, DELIMITER, ENV_PREFIX
 
-DELIMITER = ","
-DEFAULT_FORMAT = "json"
-DEFAULT_LEVELS = {
-    "": logging.INFO,
-    "requests": logging.WARNING,
-    "urllib3": logging.WARNING,
-}
-ENV_PREFIX = "EIQ_"
 
 # if for whatever reason we switch away from structlog in the future?
 get_logger = structlog.get_logger
